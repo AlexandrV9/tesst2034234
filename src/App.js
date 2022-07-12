@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import io from "socket.io-client";
+import { useRef, useEffect } from "react"
 import './App.css';
 
 function App() {
+
+  // const SERVER_URL = "https://test213121.herokuapp.com";
+  // http://localhost:8081";
+  // "https://alex-phone-backend.herokuapp.com"
+  // const socketRef = useRef(null);
+
+  useEffect(() => {
+      // socketRef.current = io(SERVER_URL);
+
+      // socketRef.current.on("server:start", (data) => {
+      //   console.log("server:start ---->", data)
+      // })    
+      
+      // socketRef.current.on("users", (users) => {
+      //   console.log("users --->", users);
+      // })
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {process.env.REACT_APP_SERVER_URL}
     </div>
   );
 }
